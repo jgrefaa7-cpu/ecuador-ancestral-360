@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecuador Ancestral 360°</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial, sans-serif;background:#f7f1e5;color:#2d241d}
+header{background:linear-gradient(135deg,#166534,#0f766e);color:white;padding:28px 18px;text-align:center}
+header h1{margin:0 0 8px;font-size:34px}
+header p{margin:0;font-size:17px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;background:#fff;padding:12px;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px #0002}
+nav button{border:0;background:#166534;color:#fff;padding:10px 14px;border-radius:20px;cursor:pointer}
+nav button:hover{background:#0f766e}
+main{max-width:1050px;margin:auto;padding:25px 16px}
+section{display:none}
+section.active{display:block}
+.card{background:white;border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 4px 14px #0001}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+h2{color:#166534}
+h3{color:#0f766e}
+.badge{display:inline-block;background:#f59e0b;color:#fff;padding:5px 10px;border-radius:15px;font-size:13px}
+.quiz-option,.game-btn{display:block;width:100%;text-align:left;margin:8px 0;padding:12px;border:2px solid #ddd;background:#fafafa;border-radius:10px;cursor:pointer}
+.quiz-option:hover,.game-btn:hover{border-color:#0f766e;background:#ecfdf5}
+.correct{background:#dcfce7!important;border-color:#16a34a!important}
+.incorrect{background:#fee2e2!important;border-color:#dc2626!important}
+#score{font-size:22px;font-weight:bold;color:#166534}
+.progress{height:12px;background:#ddd;border-radius:20px;overflow:hidden;margin:10px 0}
+#bar{height:100%;width:0;background:#f59e0b}
+footer{background:#1f2937;color:#fff;text-align:center;padding:22px;margin-top:30px}
+.small{font-size:14px;color:#665}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇪🇨 Ecuador Ancestral 360°</h1>
+  <p>Sabores, sonidos y tradiciones del Ecuador mediante las Tecnologías de la Información</p>
+</header>
+
+<nav>
+  <button onclick="show('inicio')">Inicio</button>
+  <button onclick="show('gastronomia')">🍲 Gastronomía</button>
+  <button onclick="show('musica')">🎵 Música</button>
+  <button onclick="show('juegos')">🎯 Juegos</button>
+  <button onclick="show('leyendas')">📖 Leyendas</button>
+  <button onclick="show('quiz')">🧠 Quiz</button>
+  <button onclick="show('gymkana')">🏆 Gymkana</button>
+</nav>
+
+<main>
+<section id="inicio" class="active">
+  <div class="card">
+    <span class="badge">Propuesta tecnológica</span>
+    <h2>Bienvenidos</h2>
+    <p>Esta plataforma digital busca difundir y preservar elementos del patrimonio cultural inmaterial del Ecuador mediante recursos interactivos.</p>
+    <div class="grid">
+      <div class="card"><h3>🍲 Sabores ecuatorianos</h3><p>Conoce platos, ingredientes y tradiciones gastronómicas.</p></div>
+      <div class="card"><h3>🎵 Ecos del Ecuador</h3><p>Explora géneros musicales tradicionales.</p></div>
+      <div class="card"><h3>🎯 Juegos tradicionales</h3><p>Aprende sobre juegos que forman parte de la memoria colectiva.</p></div>
+      <div class="card"><h3>📖 Voces y mitos</h3><p>Descubre historias y leyendas transmitidas entre generaciones.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gastronomia">
+  <div class="card">
+    <h2>🍲 Sabores Ecuatorianos</h2>
+    <p>La gastronomía ecuatoriana refleja la diversidad de sus regiones y el uso de productos e ingredientes propios de cada territorio.</p>
+    <div class="grid">
+      <div class="card"><h3>Encebollado</h3><p>Preparación tradicional asociada especialmente a la región Costa.</p></div>
+      <div class="card"><h3>Fanesca</h3><p>Plato tradicional preparado durante la Semana Santa.</p></div>
+      <div class="card"><h3>Locro de papa</h3><p>Preparación tradicional de la Sierra basada principalmente en papa.</p></div>
+      <div class="card"><h3>Encocado</h3><p>Preparaciones que utilizan coco y forman parte de la gastronomía de la Costa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="musica">
+  <div class="card">
+    <h2>🎵 Ecos del Ecuador</h2>
+    <p>La música tradicional es una forma de expresión de la memoria, identidad y diversidad cultural.</p>
+    <div class="grid">
+      <div class="card"><h3>Pasillo</h3><p>Género musical de gran importancia en la identidad musical ecuatoriana.</p></div>
+      <div class="card"><h3>Sanjuanito</h3><p>Manifestación musical tradicional vinculada principalmente con la región andina.</p></div>
+      <div class="card"><h3>Albazo</h3><p>Género tradicional ecuatoriano relacionado con celebraciones y fiestas.</p></div>
+      <div class="card"><h3>Tonada</h3><p>Forma musical tradicional presente en repertorios ecuatorianos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="juegos">
+  <div class="card">
+    <h2>🎯 Juegos tradicionales</h2>
+    <p>Los juegos tradicionales permiten transmitir costumbres, habilidades y formas de convivencia entre generaciones.</p>
+    <div class="grid">
+      <div class="card"><h3>Trompo</h3><p>Consiste en hacer girar un trompo mediante una cuerda y desarrollar diferentes habilidades.</p></div>
+      <div class="card"><h3>Rayuela</h3><p>Se dibuja un recorrido en el suelo y se avanza siguiendo reglas determinadas.</p></div>
+      <div class="card"><h3>Ensacados</h3><p>Los participantes avanzan saltando dentro de un saco hasta llegar a la meta.</p></div>
+      <div class="card"><h3>Carrera de tres pies</h3><p>Dos participantes unen una de sus piernas y deben coordinarse para avanzar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="leyendas">
+  <div class="card">
+    <h2>📖 Voces y Mitos</h2>
+    <p>Las leyendas forman parte de la tradición oral y permiten conservar relatos, valores e imaginarios de distintas comunidades.</p>
+    <div class="grid">
+      <div class="card"><h3>Cantuña</h3><p>Relato tradicional quiteño relacionado con la construcción de una iglesia y un pacto sobrenatural.</p></div>
+      <div class="card"><h3>Padre Almeida</h3><p>Leyenda tradicional quiteña sobre un religioso y sus aventuras nocturnas.</p></div>
+      <div class="card"><h3>La Llorona</h3><p>Relato popular presente en distintas versiones de América Latina.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="card">
+    <h2>🧠 Quiz cultural</h2>
+    <p>Responde las preguntas y descubre cuánto conoces sobre las tradiciones ecuatorianas.</p>
+    <div class="progress"><div id="bar"></div></div>
+    <p id="score">Puntaje: 0 / 5</p>
+    <div id="questions"></div>
+    <button class="game-btn" onclick="restartQuiz()">🔄 Reiniciar quiz</button>
+  </div>
+</section>
+
+<section id="gymkana">
+  <div class="card">
+    <h2>🏆 Gymkana Cultural Digital: Tras la Huella del Patrimonio</h2>
+    <p><b>Objetivo:</b> promover el conocimiento y apropiación de elementos culturales mediante retos prácticos y digitales.</p>
+    <p><b>Duración sugerida:</b> 120–150 minutos.</p>
+    <div class="grid">
+      <div class="card"><h3>Reto 1: Sabores</h3><p>Identifica un plato tradicional a partir de sus ingredientes.</p><button class="game-btn" onclick="alert('Reto: ¿Qué plato tradicional se prepara con pescado o albacora, yuca, cebolla y limón? Respuesta: encebollado.')">Ver reto</button></div>
+      <div class="card"><h3>Reto 2: Sonidos</h3><p>Identifica un género musical tradicional y menciona un instrumento asociado.</p><button class="game-btn" onclick="alert('Reto: menciona un género musical ecuatoriano. Ejemplos: pasillo, sanjuanito, albazo o tonada.')">Ver reto</button></div>
+      <div class="card"><h3>Reto 3: Juegos</h3><p>Explica las reglas de un juego tradicional y demuestra cómo se juega.</p><button class="game-btn" onclick="alert('Reto: explica en 30 segundos cómo se juega al trompo, rayuela o ensacados.')">Ver reto</button></div>
+      <div class="card"><h3>Reto 4: Leyendas</h3><p>Resuelve una adivinanza relacionada con una leyenda ecuatoriana.</p><button class="game-btn" onclick="alert('Reto: ¿Qué leyenda quiteña está relacionada con la construcción de una iglesia y un pacto sobrenatural? Respuesta: Cantuña.')">Ver reto</button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p><b>Ecuador Ancestral 360°</b></p>
+  <p>Proyecto académico para la preservación y difusión del patrimonio cultural ecuatoriano mediante TIC.</p>
+</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+const data=[
+ {q:"¿Cuál de estos es un género musical tradicional ecuatoriano?",o:["Pasillo","Rock","Reguetón","Jazz"],a:0},
+ {q:"¿Qué juego tradicional consiste en hacer girar un objeto con una cuerda?",o:["Rayuela","Trompo","Ensacados","Canicas"],a:1},
+ {q:"¿Qué plato se asocia tradicionalmente con la Semana Santa en Ecuador?",o:["Fanesca","Encebollado","Hornado","Ceviche"],a:0},
+ {q:"¿Cuál es una leyenda tradicional quiteña?",o:["Cantuña","Robin Hood","Drácula","Hércules"],a:0},
+ {q:"¿Cuál es uno de los objetivos de Ecuador Ancestral 360°?",o:["Eliminar tradiciones","Preservar y difundir patrimonio cultural","Reemplazar las fiestas","Eliminar juegos tradicionales"],a:1}
+];
+let score=0,answered=0;
+function renderQuiz(){
+ const box=document.getElementById('questions'); box.innerHTML='';
+ data.forEach((x,i)=>{
+   const card=document.createElement('div'); card.className='card';
+   card.innerHTML='<h3>'+ (i+1)+'. '+x.q+'</h3>';
+   x.o.forEach((op,j)=>{
+     const b=document.createElement('button'); b.className='quiz-option'; b.textContent=op;
+     b.onclick=()=>{
+       if(card.dataset.done) return;
+       card.dataset.done='1'; answered++;
+       if(j===x.a){score++;b.classList.add('correct')}else{
+         b.classList.add('incorrect');
+         card.querySelectorAll('button')[x.a].classList.add('correct');
+       }
+       document.getElementById('score').textContent='Puntaje: '+score+' / 5';
+       document.getElementById('bar').style.width=(answered/5*100)+'%';
+     };
+     card.appendChild(b);
+   });
+   box.appendChild(card);
+ });
+}
+function restartQuiz(){score=0;answered=0;document.getElementById('score').textContent='Puntaje: 0 / 5';document.getElementById('bar').style.width='0%';renderQuiz();}
+renderQuiz();
+</script>
+</body>
+</html>
